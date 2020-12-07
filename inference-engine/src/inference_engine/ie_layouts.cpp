@@ -6,6 +6,7 @@
 
 #include <algorithm>
 #include <map>
+#include <iostream>
 
 using namespace InferenceEngine;
 
@@ -355,6 +356,10 @@ void BlockingDesc::fillDesc(const SizeVector& blocked_dims, const SizeVector& or
     for (size_t i = 2; i <= order.size(); i++) {
         offsetPaddingToData[offsetPaddingToData.size() - i] = 0;
         strides[strides.size() - i] = strides[strides.size() - (i - 1)] * blocked_dims[blocked_dims.size() - (i - 1)];
+    }
+
+    for (size_t i = 0; i < strides.size(); i++) {
+        std::cout << "stride# " << i << " " << strides[i] << std::endl;
     }
 
     offsetPadding = 0;
