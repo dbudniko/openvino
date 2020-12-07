@@ -361,6 +361,12 @@ void BlockingDesc::fillDesc(const SizeVector& blocked_dims, const SizeVector& or
     for (size_t i = 0; i < strides.size(); i++) {
         std::cout << "stride# " << i << " " << strides[i] << std::endl;
     }
+    for (size_t i = 0; i < blocked_dims.size(); i++) {
+        std::cout << "blocked_dims# " << i << " " << blocked_dims[i] << std::endl;
+    }
+    for (size_t i = 0; i < offsetPaddingToData.size(); i++) {
+        std::cout << "offsetPaddingToData# " << i << " " << offsetPaddingToData[i] << std::endl;
+    }
 
     offsetPadding = 0;
 }
